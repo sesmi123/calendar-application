@@ -1,0 +1,7 @@
+create calendar --name MyCalendar --timezone America/New_York
+use calendar --name MyCalendar
+create event FootballMatch from 2025-12-06T09:00 to 2025-12-06T23:00 repeats RF until 2025-12-30
+edit events subject FootballMatch from 2025-12-11T09:00 with BasketballMatch
+print events from 2025-11-01T01:00 to 2025-12-31T11:00
+show calendar dashboard from 2025-12-01 to 2025-12-31
+exit

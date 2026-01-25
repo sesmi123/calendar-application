@@ -1,0 +1,70 @@
+create calendar --name MyCalendar --timezone America/New_York
+use calendar --name MyCalendar
+create event "Midnight Snacking" from 2025-11-02T23:45 to 2025-11-03T00:15
+create event DoctorAppointment from 2025-11-02T15:00 to 2025-11-02T16:00
+create event DoctorAppointment2 from 2025-11-02T15:00 to 2025-11-02T16:00 repeats MTF for 3 times
+create event DoctorAppointment3 from 2025-11-02T15:00 to 2025-11-02T16:00 repeats MTF until 2025-11-30
+create event FootballMatch from 2025-12-06T09:00 to 2025-12-06T23:00 repeats RF until 2025-12-30
+create event TeamsMeeting on 2025-11-03
+create event TeamsMeeting2 from 2025-11-03T15:00 to 2025-11-03T16:00 repeats MTF for 3 times
+create event TeamsMeeting3 from 2025-11-03T16:00 to 2025-11-03T17:00 repeats MTF until 2025-11-30
+print events on 2025-11-04
+print events from 2025-11-01T01:00 to 2025-11-30T11:00
+show status on 2025-11-02T14:00
+show status on 2025-11-02T15:00
+show status on 2025-11-02T15:01
+show status on 2025-11-02T16:00
+show status on 2025-11-02T16:01
+create event "(New) DoctorAppointment" from 2025-10-02T15:00 to 2025-10-02T16:00
+create event "(New) DoctorAppointment2" from 2025-10-02T15:00 to 2025-10-02T16:00 repeats MTF for 3 times
+create event "(New) TeamsMeeting" on 2025-10-03
+create event "(New) TeamsMeeting2" from 2025-10-03T15:00 to 2025-10-03T16:00 repeats MTF for 3 times
+create event "(New) TeamsMeeting3" from 2025-10-03T16:00 to 2025-10-03T17:00 repeats MTF until 2025-10-30
+edit event subject DoctorAppointment from 2025-11-02T15:00 to 2025-11-02T16:00 with Doctor_Appointment
+edit event start Doctor_Appointment from 2025-11-02T15:00 to 2025-11-02T16:00 with 2025-11-02T15:30
+edit event end Doctor_Appointment from 2025-11-02T15:30 to 2025-11-02T16:00 with 2025-11-02T16:30
+edit event description Doctor_Appointment from 2025-11-02T15:30 to 2025-11-02T16:30 with "updated description"
+edit event location Doctor_Appointment from 2025-11-02T15:30 to 2025-11-02T16:30 with online
+edit event status Doctor_Appointment from 2025-11-02T15:30 to 2025-11-02T16:30 with public
+edit event subject TeamsMeeting2 from 2025-11-03T15:00 to 2025-11-03T16:00 with TeamsMeeting_2
+edit event start TeamsMeeting_2 from 2025-11-03T15:00 to 2025-11-03T16:00 with 2025-11-03T15:30
+edit series subject TeamsMeeting_2 from 2025-11-03T15:30 with TeamsMeeting200
+edit series subject TeamsMeeting3 from 2025-11-03T16:00 with TeamsMeeting300
+edit series subject DoctorAppointment3 from 2025-11-03T15:00 with DoctorAppointment_301
+edit series description DoctorAppointment_301 from 2025-11-03T15:00 with "updated doctor's appointment..."
+edit series status DoctorAppointment_301 from 2025-11-03T15:00 with PRIVATE
+edit series location DoctorAppointment_301 from 2025-11-03T15:00 with ONLINE
+edit series start DoctorAppointment_301 from 2025-11-03T15:00 with 2025-11-03T15:30
+edit series end DoctorAppointment_301 from 2025-11-03T15:30 with 2025-11-03T16:30
+edit events subject FootballMatch from 2025-12-18T09:00 with BasketballMatch
+edit events location BasketballMatch from 2025-12-18T09:00 with PHYSICAL
+edit events description BasketballMatch from 2025-12-18T09:00 with "bball game"
+edit events status BasketballMatch from 2025-12-18T09:00 with PRIVATE
+edit series subject FootballMatch from 2025-12-11T09:00 with VolleyBallMatch
+edit events start VolleyBallMatch from 2025-12-19T09:00 with 2025-12-19T20:00
+edit events subject VolleyBallMatch from 2025-12-11T09:00 with Chess
+create event PDP_Lecture from 2026-10-01T09:50 to 2026-10-01T11:30 repeats TF for 4 times
+edit events location PDP_Lecture from 2026-10-06T09:50 with PHYSICAL
+edit events description PDP_Lecture from 2026-10-02T09:50 with "Lecture by Prof. Vido"
+edit events start PDP_Lecture from 2026-10-09T09:50 with 2026-10-09T09:45
+edit events description PDP_Lecture from 2026-10-02T09:50 with "Lecture on Adapter Pattern"
+export cal google_mycalendar.csv
+export cal google_mycalendar.ical
+create calendar --name Work --timezone Asia/Kolkata
+use calendar --name Work
+create event Shopping from 2025-11-02T15:00 to 2025-11-02T16:00
+create event "Dog Walking" from 2025-11-02T15:00 to 2025-11-02T16:00 repeats MT for 3 times
+export cal work/google_cal.csv
+export cal work/google_cal.ical
+use calendar --name MyCalendar
+copy event TeamsMeeting200 on 2025-11-04T15:00 --target Work to 2025-11-04T12:00
+copy event "(New) TeamsMeeting3" on 2025-10-24T16:00 --target Work to 2025-11-04T12:00
+copy events on 2025-11-03 --target Work to 2025-11-05
+copy events between 2025-11-05 and 2025-11-30 --target Work to 2025-12-01
+print events from 2025-11-05T00:00 to 2025-11-30T23:00
+use calendar --name Work
+print events from 2025-11-02T12:00 to 2025-12-31T23:00
+edit calendar --name Work --property name WorkCal
+edit calendar --name WorkCal --property timezone America/New_York
+print events from 2025-11-02T12:00 to 2025-12-31T23:00
+exit
