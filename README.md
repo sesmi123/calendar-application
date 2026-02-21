@@ -593,3 +593,8 @@ The application supports three execution modes:
 **Invalid arguments:** Any other command-line arguments will display an error message and exit gracefully.
 
 ---
+
+## Contributors
+
+1. Sesmi Athiyarath - sesmi123
+2. Alex Joseph - alex710joseph
