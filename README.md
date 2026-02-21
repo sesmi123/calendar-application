@@ -39,6 +39,7 @@ java -jar build/libs/JARNAME.jar --mode headless <path-to-commands-file>
 - The commands file must end with an `exit` command
 - If the file ends without an `exit` command, an error message will be displayed
 
+
 ## Command Reference
 
 ### Date and Time Format
